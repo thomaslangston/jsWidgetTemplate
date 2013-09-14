@@ -44,6 +44,8 @@ function scriptLoadHandler() {
 function main() { 
 window.wns = (window.wns || {});
   jQuery(document).ready(function($) { 
+    var widgetAnchor = $('#example-widget-anchor');
+    $(widgetAnchor).after('<div id="example-widget-container"></div>');
     var widgetContainer = $('#example-widget-container');
     widgetContainer.html('Server Script Loaded');
     
