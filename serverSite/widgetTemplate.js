@@ -13,7 +13,7 @@ if (window.jQuery === undefined || window.jQuery.fn.jquery !== '1.4.2') {
     script_tag.setAttribute("src",
         "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js");
     if (script_tag.readyState) {
-      script_tag.onreadystatechange = function () { // For old versions of IE
+      script_tag.onreadystatechange = function () { // For old IE
           if (this.readyState == 'complete' || this.readyState == 'loaded') {
               scriptLoadHandler();
           }
@@ -42,12 +42,16 @@ function scriptLoadHandler() {
 function main() { 
     jQuery(document).ready(function($) { 
         // We can use jQuery 1.4.2 here
-    
+        
+        var widgetContainer = $('#example-widget-container');
+
+        widgetContainer.html('Server Content Loaded');
+        
         function crossDomainGet(){
         	var widget_url = "http://example.com/wiget_data.js?callback=?";
-			$.getJSON(widget_url, function(data) {
-		  		$('#example-widget-container').html(data.html);
-			});	
+          $.getJSON(widget_url, function(data) {
+		  		  $('#example-widget-container').html(data.html);
+          });	
         }
         
     });
