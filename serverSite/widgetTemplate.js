@@ -1,11 +1,6 @@
 //Original code by Alex Marandon
 //http://alexmarandon.com/articles/web_widget_jquery/
 
-//Usage
-
-//<script src="http://example.com/widget/script.js" type="text/javascript"></script>
-//<div id="example-widget-container"></div>
-
 (function() {
 
 // Localize jQuery variable
