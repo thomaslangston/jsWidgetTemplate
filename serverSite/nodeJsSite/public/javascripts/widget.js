@@ -3,7 +3,7 @@
 
 (function() {
 
-var server = "localhost:3000";
+var server = "your-server.com:3000";
 
 // Localize jQuery variable
 var jQuery;
@@ -55,7 +55,7 @@ window.wns = (window.wns || {});
     }
  
     function crossDomainGet(){
-      var dataUrl = "http://" + server + "/javascripts/data.js?callback=callbackFunction";
+      var dataUrl = "http://" + server + "/data?callback=wns.callbackFunction";
       // $.getJSON(dataUrl, function(data){
         // widgetContainer.html('Server Data Loaded');
       // });
